@@ -8,10 +8,36 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		
+		<!-- Main.css-->
+		<link rel="stylesheet" href="css/main.css" class="rel">
+		<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,900&amp;subset=latin-ext" rel="stylesheet">
+		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 		<title>Hello, world!</title>
 	</head>
 	<body>
-		<h1>Hello, world!</h1>
+		<header class="header d-flex justify-content-between align-items-center">
+				<button type="button" class="hamburger p-2"><i class="fas fa-bars"></i></button>
+				<div class="">
+					<h1 class="header-title p-2 text-right font-weight-light">App Landing Page</h1>
+				</div>
+		</header>
+		
+		<main class="main-content">
+			<div class="app-container">
+				<h1 class="app-name text-center font-weight-light">App name</h1>
+				<div class="icon blue-icon"></div>
+				<h3 class="additional-app-name text-center">Additional app name</h3>
+			</div>
+			<div class="main-description container-fluid">
+				<h1 class="description-title text-center font-weight-bold">Lorem ipsum</h1>
+				<p class="description-text text-center">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<footer class="text-center font-weight-light">
+					© 2018 Jacek Gałka
+				</footer>
+			</div>
+		</main>
 		
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
