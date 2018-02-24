@@ -6,6 +6,8 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    height: 100%;
+    position: relative;
 }
 
 .header {
@@ -76,22 +78,22 @@ footer {
 }
 
 
-
-
+.wrapper {
+    display: flex;
+}
 
 /* slightly transparent fallback */
 .menu {
     background-color: rgba(0, 0, 50, .6);
-    position: fixed;
+    position: absolute;
     top: 0;
+    bottom: 0;
     left: -400px;
-    width: 66.666%;
-    height: 100vh;
-
-    display: flex;
+    width: 75%;
     flex-direction: column;
     box-shadow: 0 0 6px #000;
     transition: left 1s;
+    text-align: right;
 }
 
 /* if backdrop support: very transparent and blurred */
@@ -125,9 +127,9 @@ footer {
     align-items: center;
     margin-bottom: 40px;
     box-shadow: 0 2px 6px #000;
-    position: relative;
     left: -400px;
     transition: left 1s;
+    position: relative;
 }
 
 .menu-row h2 {
@@ -164,14 +166,22 @@ footer {
     width: calc(100% + 20px);
 }
 
+@media (min-width: 568px) {
+    .menu {
+        width: 40%;
+    }
 
+    .menu, .menu-row {
+        left: -600px;
+    }
+}
 
 .menu-shown {
-    left: 0px;
+    left: 0;
 }
 
 .menu-shown .menu-row {
-    left: 0px;
+    left: 0;
 }
 
 .menu-shown .menu-row:nth-child(2) {
