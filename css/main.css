@@ -74,3 +74,118 @@ footer {
     margin: 40px auto 0;
     padding-bottom: 20px;
 }
+
+
+
+
+
+/* slightly transparent fallback */
+.menu {
+    background-color: rgba(0, 0, 50, .6);
+    position: fixed;
+    top: 0;
+    left: -400px;
+    width: 66.666%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 6px #000;
+    transition: left 1s;
+}
+
+/* if backdrop support: very transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(1em)) or (backdrop-filter: blur(1em))) {
+    .menu {
+        background-color: rgba(67, 67, 90, .5);
+        -webkit-backdrop-filter: blur(0.75em);
+        backdrop-filter: blur(0.75em);
+    }
+}
+
+
+
+.close-sign {
+    font-size: 3.5em;
+    align-self: flex-end;
+    margin: 10px 20px 20px;
+    color: #fff;
+    opacity: 0.75;
+    text-shadow: 0 0 8px #000;
+}
+
+.menu-row {
+    width: calc(100% + 10px);
+    height: 80px;
+    display: flex;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-left: -10px;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 6px #000;
+    position: relative;
+    left: -400px;
+    transition: left 1s;
+}
+
+.menu-row h2 {
+    font-weight: 300;
+    margin-left: 20px;
+}
+
+.menu-row span {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+.menu-row:nth-child(2) span {
+    background: linear-gradient(#36CEF9, #279DF4);
+}
+
+.menu-row:nth-child(3) span {
+    background: linear-gradient(#B4EC51, #429321);
+}
+
+.menu-row:nth-child(4) span {
+    background: linear-gradient(#FAD961, #F76B1C);
+}
+
+.menu-row:nth-child(5) span {
+    background: linear-gradient(#F5515F, #9F041B);
+}
+
+.menu-row.active {
+    background-color: #4C85EC;
+    color: #fff;
+    width: calc(100% + 20px);
+}
+
+
+
+.menu-shown {
+    left: 0px;
+}
+
+.menu-shown .menu-row {
+    left: 0px;
+}
+
+.menu-shown .menu-row:nth-child(2) {
+     transition-delay: 0s;
+ }
+
+.menu-shown .menu-row:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.menu-shown .menu-row:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.menu-shown .menu-row:nth-child(5) {
+    transition-delay: 0.45s;
+}
