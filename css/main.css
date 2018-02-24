@@ -18,7 +18,10 @@ body {
 }
 
 .header {
-    /*background: linear-gradient(to right, var(--gradient-purple), var(--gradient-blue));*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
 }
 
 .hamburger {
@@ -120,9 +123,11 @@ footer {
     }
 }
 
+.menu .hamburger {
+    display: none;
+}
 
-
-.close-sign {
+.close-sign, .menu .hamburger {
     font-size: 3.5em;
     align-self: flex-end;
     margin: 10px 20px 20px;
@@ -159,19 +164,19 @@ footer {
     border-radius: 12px;
 }
 
-.menu-row:nth-child(2) span {
+.menu-row:nth-child(3) span {
     background: linear-gradient(#36CEF9, #279DF4);
 }
 
-.menu-row:nth-child(3) span {
+.menu-row:nth-child(4) span {
     background: linear-gradient(#B4EC51, #429321);
 }
 
-.menu-row:nth-child(4) span {
+.menu-row:nth-child(5) span {
     background: linear-gradient(#FAD961, #F76B1C);
 }
 
-.menu-row:nth-child(5) span {
+.menu-row:nth-child(6) span {
     background: linear-gradient(#F5515F, #9F041B);
 }
 
@@ -191,26 +196,66 @@ footer {
     }
 }
 
-.menu-shown {
-    left: 0;
+@media only screen and (max-width: 767px) {
+    .menu-shown {
+        left: 0;
+    }
+
+    .menu-shown .menu-row {
+        left: 0;
+    }
+
+    .menu-shown .menu-row:nth-child(3) {
+        transition-delay: 0s;
+    }
+
+    .menu-shown .menu-row:nth-child(4) {
+        transition-delay: 0.15s;
+    }
+
+    .menu-shown .menu-row:nth-child(5) {
+        transition-delay: 0.3s;
+    }
+
+    .menu-shown .menu-row:nth-child(6) {
+        transition-delay: 0.45s;
+    }
 }
 
-.menu-shown .menu-row {
-    left: 0;
-}
 
-.menu-shown .menu-row:nth-child(2) {
-     transition-delay: 0s;
- }
+/* TABLET */
 
-.menu-shown .menu-row:nth-child(3) {
-    transition-delay: 0.15s;
-}
+@media only screen and (min-width: 768px) {
+    .menu {
+        left: -170px;
+        width: 300px;
+    }
 
-.menu-shown .menu-row:nth-child(4) {
-    transition-delay: 0.3s;
-}
+    .menu-row {
+        left: 0;
+    }
 
-.menu-shown .menu-row:nth-child(5) {
-    transition-delay: 0.45s;
+    .header {
+        justify-content: flex-end;
+        height: 60px;
+    }
+
+    .header .header-title {
+        width: 100%;
+        font-size: 2.5rem;
+    }
+
+    .header .hamburger,
+    .menu .close-sign {
+        display: none;
+    }
+
+    .menu .hamburger {
+        display: block;
+        padding-right: 20px;
+    }
+
+    .menu-shown {
+        left: 0;
+    }
 }
